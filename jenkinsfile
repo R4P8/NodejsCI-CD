@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages{
+        stage ('Checkout'){
+            steps {
+                sh 'Checkout SCM'
+            }
+        }
+
+        stage ('Test'){
+            steps {
+                sh 'sudo apt install npm'
+                sh 'npm test'
+            }
+        }
+
+        stage ('Build'){
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+    }
+}
