@@ -19,6 +19,9 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
+        
+        stage ('Build Imgaes'){
+            steps {
+                sh 'docker build -t node-myapps:1.0 .'
     }
 }
